@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<title>7日目講義内容</title>
+		<link rel = "Stylesheet" href="css/main.css">
+	</head>
+	<body>
+	<h1>７日目講義内容</h1>
+	<h2>ブロックとは</h2>
+	<p><b>{}の中をブロックという</b></p>
+	<p>文法上は１行の場合{}を省略できるが、省略は<b>推奨されない！</b></p>
+	<h3>ブロック内で宣言した変数の寿命(スコープ)</h3>
+	<p><b>ブロック内で宣言した変数は、そのブロックが終わると同時に消滅する。</b></p>
+	<p><b>スコープ</b>・・・変数の有効範囲</p>
+	<p><b>javaはブロックスコープ！！</b>、ブロックが終わると変数が消滅する</p>
+	<a href="http://www.ne.jp/asahi/hishidama/home/tech/java/formatter.html">Java書式付き出力</a>
+	<h3>if,while文</h3>
+	<p>if,whileの条件式は、評価結果がtrue or folse以外の式は書き込めない</p>
+	<p><b>文字列を比較する際はif (str.equals("夕日"))</b>==の代わりにequalsを使う！
+	<br><b>文字列変数名.equals("文字列")</b>で比較</p>
+	<p><b>&&</b>・・・かつ　両方満たす場合true if(age >=18 && month ==5){ など</p>
+	<p><b>||</b>・・・または　　どちらか満たす場合はtrule  if(age >=18 || month ==5)</p>
+	<p><b>変数名.equals</b>・・・<b>文字列の比較</b>は<b>.equals</b>を使うので注意！</p>
+	<p><b>&&と||は&&が優先</b></p>
+
+	<h3>switch文</h3>
+	<p>変数の値を比較し変数==値や変数==変数　を判定するときに使う</p>
+	<code>swhitch(変数名)<br>
+	case 値:<br>
+		文<br>
+		break;<br>
+	case 値:<br>
+		文<br>
+		break;<br>
+	default:<br>
+		文</code>
+	<p><b>== の比較しか使えない</b>大なり、小なり等は無理</p>
+	<p><b>break</b>・・・書かないと上の文に該当した場合は、breakを発見するまですべて結果を出力する。</p>
+	<p><b>条件に一致するcaseラベルまでを処理をジャンプする命令</b></p>
+	<p><b>同じ出力をする時あえてbreakを書かずに出力する</b>
+	<br>case 1:<br>
+	case 2:
+		System.out.println(~~);
+		break;
+	case 3:
+		~~
+		break;</p>
+
+	<h2>関数、単語</h2>
+	<p>java.uti.Scanner(System.in).<b>nextLine()</b>
+	<br>nextLine のLineは一行受け取るの意味。　<b>next</b>のみだと、単語で受け取る。</p>
+	<p>java.util.Scanner(System.in).<b>nexInt();</b>
+	<br>next<b>Double</b>にするとDouble型で受け取る！</p>
+	<p><b>System.out.printf("%s(%d)文字列",name,age);</b>
+	<br>カンマの後左側から%～の順に文字列変換して表示</p>
+	<p>double bmi=21.22222222222222;
+	<br>System.out.printf("BMIは%.2fです",bmi);　%.2fにbmiが小数点２桁まで埋め込まれる。</p>
+	<p><b>"あ%,d円",money</b>moneyの中身を<b>%,d</b>に入れる。%,で３桁ごとくくる。</p>
+	<p><b>%s</b>String型を入れる箱
+	<br><b>%d</b>decimalのd 数値の意味
+	<br><b>%5d</b>・・・%数値dとは数値分の桁のスペースを取ってくれる。なので桁を右側に揃えられる。
+	<br><b>%05d</b>・・・%0数値dとは数値分の桁に足りない場合は頭を0埋めしてくれる。
+	<br><b>%.2f</b>・・・小数点以下２桁表示
+	<br><b>%7.1f</b>・・・少なくとも７桁取る。内小数点以下は１桁。
+	<br>%の後ろの型を間違えるとエラーになるよ！</p>
+	
+
+	<h2>詳細等</h2>
+	<p><b>%n</b>改行</p>
+
+	</body>
+</html>

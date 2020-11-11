@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+			<title>2日目講義内容</title>
+			<link rel="stylesheet" href="cssLesson/css/main.css"/>
+			<link rel="stylesheet" href="css/main.css"/>
+	</head>
+	<body>
+		<h1>2日目講義内容</h1>
+		<h2>表示するフォルダの作成</h2>
+			<p><b>css</b>,<b>images</b>,<b>js</b> フォルダを作成し、そのフォルダの階層にhtmlファイルを置く</p>
+		<h2>画像の埋め込み</h2>
+			<p><b>	&lt;img src="images/nightImage.jpg" alt="幻想的な夜のイメージ" /&gt;</b></p>
+			<p>img src=でファイルのパスを指定。　altで視覚情報の名前を指定</p>
+			<img src="html2/images/nightImage.jpg" alt="幻想的な夜のイメージ" />
+		<h2>youtubeの埋め込み</h2>
+			<p><b>iframe</b>タグを使って埋め込む</p>
+			<p>srcで参照先を指定する。
+			<br>frameborder="0"で動画との境界線を消せる。デフォルト値は１</p>
+			<p>&ltiframe width="560" height="315" src="https://www.youtube.com/embed/GJgwzrxNn7E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt/iframe&gt;</p>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/GJgwzrxNn7E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<h2>インライン要素とブロック要素</h2>
+		<dl>
+			<dt><b>インライン要素</b></dt>
+				<dd>ブロックではないので表示サイズに余裕があれば横並びで表示される。</dd>
+			<dt><b>ブロック要素</b></dt>
+				<dd>ブロック要素とはそれ自体でブロック（塊）を構成するタグ。ブロック要素ごとに開業される。</dd>
+		</dl>
+		<h2>CSSとは</h2>
+		<dl>
+			<dt><b>CSSとは</b></bt>
+			<dd>CSSとはCascading Style Seetの略でHTMLの見た目を装飾する</dd>
+		</dl>
+		<h3>レスポンシブルデザインを作成する際のブラウザがつけているデザインをリセット</h3>
+			<p>ブラウザでyahoo css resetなどと検索すると出てくる<b>YUI library</b>等からソースをコピーする。
+			<br>&lt;link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/reset/reset-min.css"&gt;
+			<br>これを挿入することにより、ブラウザで表示されているデザインがリセットされる。</p>
+		<h2>デザインの検証</h2>
+			<p>表示されているブラウザ内で検証したい項目を右クリックし検証を押すと開発者用の検証画面が表示される。
+			<br>検証画面で色変更や、サイズ変更等試せる。デザインを実際変える場合はCSSに手動で落とし込む</p>
+		<h2 class="red">CSSの作り方</h2>
+		<img src="html2/images/cssrule1.png" alt="CSSの構成" />
+		<h2 class="red">タグや属性、値等わからないことがあればMDNで検索</h2>
+		<h2>Webフォント</h2>
+			<p>フォントは通常PC依存だが、表示させたいデザインがある場合はWEBフォントを使う。</p>
+			<p><a href="https://googlefonts.github.io/japanese/">Google Fonts + Japanese</a></p>
+		<h3>CSSのサイズ</h3>
+		<dl>
+			<dt>widthのサイズ</dt>
+				<dd>文字のサイズ、これにpaddingやmarginを足したサイズが実際のコンテンツのサイズ</dd>
+				<dd>例：　padding左右20px border 5pxの場合25pxがwidthのサイズに設定される。</dd>
+
+		</dl>
+
+		<h2>今日の関数</h2>
+		<dl>
+			<dt><b>img srcタグ。インライン要素</b></dt>
+				<dd>img画像を表示するタグ<br>srcでファイルのパス指定</dd>
+			<dt><b>altタグ</b></dt>
+				<dd>画像がミスで表示されない際や、画像を表示しない設定にしてる際に表示されるテキスト</dd>
+				<dd>altタグの中身をSEOが見るのでしっかりSEO対策で指定しよう</dd>
+			<dt><b>iframeタグ</b></dt>
+				<dd>画像の埋め込みをする関数。インライン要素</dd>
+				<dd>srcで参照先を指定すする。frameborderを0にすることで境界線を無くせる。デフォルト値は1</dd>
+				<dd>allowfulscreenでユーザーの全画面表示を許可する</dd>
+			<dt><b>div</b></dt>
+				<dd>インライン要素をブロック要素に変えたり、複数の要素をひとまとめにするもの</dd>
+				<dd>divタグの後ろには閉じるdivの名前をコメントで挿入する。複雑になってくると何を閉じているかわからないため</dd>
+			<dt><b>linkタグ</b></dt>
+				<dd><b>リンクする外部リソースを指定する際に使用する</b></dd>
+				<dd>後ろに<b>rel属性</b>で現在のファイルと外部ファイルとの関係性を示す</dd>
+				<dd><b>href属性</b>でリンク先のアドレスを指定する</dd>
+			<dt><b>rel属性</b></dt>
+				<dd>stylesheet  スタイルシートをインポート</dd>
+				<dd>help ……ヘルプへのリンクを指定</dd>
+				<dd>など</dd>
+			<dt><b class="red">idタグ</b></dt>
+				<dd>idタグはスタイルの指定に使えるが、同一ファイル内で一度しか使えない</dd>
+				<dd>その要素に対して一意の設定をする際に使う</dd>
+				<dd><b class="green">idをCSSで作る際は#を頭につける</b></dd>
+				<dd>例：#favoriteword　　等</dd>
+		<h2>CSS用語</h2>
+		<dl>
+			<dt><b>padding</b></dt>
+				<dd>内側の余白<dd>
+				<dd>padding-left</dd>
+				<dd>padding-right等</dd>
+			<dt><b>width</b></dt>
+				<dd>幅</dd>
+			<dt><b>border</b></dt>
+				<dd>罫線</dd>
+				<dd>border-left:5px solid green;等、一括指定する</dd>
+			<dt><b class="red">CSSのコメント挿入</b></dt>
+				<dd><b class="red">/*コメント*/</b>で囲む</dd>
+			<dt><b>margin</b></dt>
+				<dd>余白の設定、最初の値が上下左右の順で指定。　2個指定の場合上下と左右。</dd>
+				<dd>autoとすることで余白の値が自動で等間隔に調整され中央に配置される</dd>
+			<dt><b class="red">div container</b></dt>
+				<dd>containerという名前のidでdivタグを使って全体を括る。<dd>
+				<dd>中央揃えする場合　width:任意　margin:0 autoで指定</dd>
+			<dt><b>margin</b></dt>
+				<dd>余白の指定</dd>
+				<dd>margin:上下　左右　と値を入れて指定</dd>
+				<dd>margin:0 auto;と入力すると上下の余白0、左右は中央に表示される。</dd>
+				<dd><b>margin:上　右　下　左　と4つ値を指定した場合は時計回り。</b></dd>
+				<dd><b>3つ指定した場合は　上　左右　下</b></dd>
+				<dd>個別指定の際はmargin-top right bottom leftとする。</dd>
+			<dt><b>width</b></dt>
+				<dd>要素の幅　指定方法はmargin等と同じ</dd>
+				<dd>%指定も可能　90%なら要素内の90%を使う。</dd>
+			<dt><b>text-align</b></dt>
+				<dd>自分の中に入っているテキストの位置。　centerなら中央、leftなら左に揃う。</dd>
+			<dt><b>border-radius</b></dt>
+				<dd>ボーダーの丸みの半径。　大きくすれば角が取れて丸くなる</dd>
+			<dt>text-shadow</dt>
+				<dd>文字の影が指定できる</dd>
+				<dd>text-shadow:1px 1px 0 上1px 左右1px 下0pxの影ができる</dd>
+			<dt><b class="red">CSSのスタイルの記述について</b></dt>
+				<dd>th,td{　と指定することで両方の要素に後の条件を反映することが出来る。</dd>
+			<dt><b>最初の要素、最後の要素のみの指定</b></dt>
+				<dd>例えばtr要素内の最初の要素、最後の要素のみを指定する場合
+				<br>tr *:first-child{　と記述して後ろに条件を記載することでtr内の最初の要素にスタイルが適用される</dd>
+				<dd>tr *:last-child{ と記述して後ろに条件を記載することでtr内の最後の要素にスタイルが適用される</dd>
+		</dl>
+
+		</dl>
+
+		<h2>用語</h2>
+		<dl>
+			<dt><b>相対パス</b></dt>
+			<dd>ソースが存在する位置から見たファイル場所の指定法</dd>
+			<dd>ホームページ等の場合サーバーが変わったりするので、絶対パスの場合すべてのパスを変更しなければならなくらる。</dd>
+			<dt><b>絶対パス</b></dt>
+			<dd>絶対パスとは最上層のファイルから参照するファイルまで全てを記載する書き方</dd>
+		</dl>
+	</body>
+</html>

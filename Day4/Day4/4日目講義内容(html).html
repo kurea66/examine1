@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja"/>
+	<head>
+		<meta charset="utf-8"/>
+		<title>４日目講義内容（html）</title>
+		<link rel="stylesheet" href="css/main.css"/>
+
+	</head>
+	<body>
+		<h1>４日目講義内容</h1>
+		<h2>絶対配置と相対配置</h2>
+		<p><b class="red">absolute</b>を使うと基準点からの絶対配置となる。
+		<br>通常の要素は指定しない限りstatic要素となっている。
+		<br><b class="red">relative</b>position属性をrelativeにするとabsoluteはそこを起点として絶対配置される。
+		<br>指定がない場合はブラウザを起点とする。</p>
+
+		<h2>レスポンシブデザイン</h2>
+		<p>レスポンシブデザインとはブラウザ幅に合わせて表示サイズが変わるデザイン。</p>
+		<p>親要素で<b>padding-top:34%</b>高さと横の比率を34%に指定する。画像の比率を変えたくないときに親の領域を指定する。</p>
+		<p>画面幅いっぱいに画像を使いたいとき、CSSでwidth:100%にする。
+		<br><b>display:block</b>で上下の隙間を無くす。インライン要素は上下に微妙に隙間を持っている。</p>
+		<p>youtubeは56.25%でコンテナ指定すると動画の元サイズと同じ比
+		<b>横100%に対して縦56.25%</b></p>
+		<p>floatItems img{
+		<br>	display:block;<br>	width:50%;<br>	border:1px solid#333;<br>	box-sizing:border-box;<br>	float:left;<br>}</p>
+		<p>コンテンツの幅を画面幅の50%のブロック要素にし左から順番に並べている。
+		<br>box-sizing:border-box;を入力しないとボーダー分で51%とかになってしまうためカラム落ちする。</p>
+
+		<h3>youtube貼り付け</h3>
+		<p><b>!important</b>・・・持ってきた要素の中のコードをCSSで打ち消す場合につける。
+		<br>youtube等は持ってくるソースに1200×720等元からサイズが入っているため、レスポンシブルにする際等に
+		<br><b>width:100%; !important;</b>で指定して打ち消す。乱用しない。</p>
+		
+		<h3>&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;<h3>
+		<p>これがついてないと検索エンジンでマイナス評価。コピペ</p>
+
+		<h2>タグ解説</h2>
+		<p><b>z-index:数値;</b>を付けると数値が大きいほうを基準点に配置する。
+		<br>セットでpositionを指定しないと適応されない。</p>
+		<p><b> &copy;</b>& co py;で特殊文字　コピーライトマーク
+		
+		<h2>CSS解説<h2>
+		<p><b>background-image:url(../images/.....)</b>背景画像を表示したいときの指定。
+		<br><b>ファイルのパスはcssファイルから見たパス</b>なので注意</p>
+		<p>background-size:・・・デフォルト値はcontainで繰り返し表示される。
+		<br><b>cover</b>に属性値を指定すると比率を崩さずに領域を覆う。</p>
+		<p><b>box-sizing:border-box;</b>サイズを内側に着けていくのでコンテンツのサイズが指定サイズになる！
+		<br>そのため自身でpaddin等を計算しなくてよくなった。</p>
+		<p><b>display:block</b>・・・インライン要素が持っている上下の隙間をブロック要素にすることによって無くす。</p>
+		<p><b>@media screen and (min-width:1200px){</b>端末の横幅が1200px以上の時の指定
+		<br><b>@media screen and (max-width:600px){</b>端末の横幅が600px以下で適応
+		<br><b>@media screen and (max width:480px){</b>端末の横幅が480px以下で適応
+		<br>基本的にコピペ</p>
+
+		<h2>用語解説</h2>
+		<p><b>relative</b>相対的な</p>
+		<p><b>index.html</b>・・・は特別でサーバー内でindex.htmlまでのファイルまで打てばサーバーが自動で検索してくれるので省略しても表示できる。
+		<br>特に理由がない限りトップページはindex.html</p>
+		<p>ul・・・unordered list　順番のないリスト。liタグでリスト中身並べる。</p>
+		<p><b>vw</b>・・・viewport width 画面幅に連動させてサイズ指定。端末の横幅に対して何パーセントか</p>
+		<p><b>vh</b>・・・viewport height 画面の縦の長さに連動させた指定。端末の縦の長さに対して何%か</p>
+		
+		<h3>Webサーバーおすすめ</h3>
+		<p>x-sever,ロリポップがおすすめ</p>
+		<p>お名前.com等でドメイン取得</p>
+	</body>
+</html>
