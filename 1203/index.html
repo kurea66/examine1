@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="Stylesheet" href="css/main.css"/>
+		<title>split</title>
+	</head>
+	<body>
+		<div class="container">
+			<h1>splitの使い方</h1>
+			<h2>実際のコード</h2>
+			<code><pre>
+			String str="りんご,みかん,ばなな";
+			String[] data=str.split(",");
+			data[0] //りんご
+			data[1] //みかん
+			data[2] //ばなな
+				</pre></code>
+			<p>と配列に格納される</p>
+			<p><b>変数名.split("区切る文字列");</b>・・・指定された文字列で変数名を区切って配列として返す。</p>
+			<p>strの中身が"りんご,みかん,,ばなな"のように空の文字列が間に含まれる場合<b>""←からのデータとして配列に格納される</b></p>
+			<p><b>変数名.split("区切る文字列",数値);</b>・・・第二引数で分割数の上限を指定でき、頭から分割していき残りは最後の要素にすべて入る。</p>
+			<p><b>文字列の後ろがすべてからの要素の場合空の文字列は入らず、無視される</b></p>
+			<p>後ろの空の要素もすべて配列の要素としてほしい場合は<b>第二引数に負の数値を入れる</b></p>
+			<p></p>
+
+			<h2>単語、関数等</h2>
+			<h2>特記</h2>
+		</div><!-- end container -->
+	</body>
+</html>
