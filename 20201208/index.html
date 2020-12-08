@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="Stylesheet" href="css/main.css"/>
+		<title>12月08日講義内容</title>
+	</head>
+	<body>
+		<div class="container">
+			<h1>12月08日講義内容</h1>
+			<h2>html</h2>
+			<h2>Java</h2>
+			<h3>暗黙の継承</h3>
+			<p><b>クラス定義の際にextendsを指定しないと暗黙にObjectクラスをextendsする</b></p>
+			<p><b>Object型の変数を宣言すれば、何型の変数でも入れることが可能で、インスタンスが生成できる</b></p>
+			<p>省略しなければ<b>public class クラス名 extends Object{}</b></p>
+			<p><b>.toString()</b>・・・型名@英数字の形式で情報を表示するというシンプルな内容</p>
+			<p>toString()で文字等を表示したい場合は<b>自分のクラスでオーバーライドする必要性がある。</b></p>
+			<p><b>System.out.println()は渡されたObjectのtoString()を呼び出して得られる文字列を表示する・・・つまり、toString()をオーバーライドしておけば、.toString()と入れずに変数名だけを入力することで出力ができる</b></p>
+			<p><b>==は等値(equality)、equals(equivalence)は等価であるかを判定する。</b></p>
+			<p><b>==は同じアドレスを指していないと同じにならない</b></p>
+			<p><b>Objectクラスのequalsは==と同じ。何をもって同じとみなすかはクラス開発者が設計し、オーバーライドしなければならない！！</b></p>
+			<p><b>変数名.equals(比べる変数名)</b></p>
+			<p>例：</p>
+			<code><pre>
+			@Override
+			public boolean equals(Object o){
+				if(this == o){return true;}
+				if(o instanceof Hero{
+					Hero h=(hero)o;
+					if(this.name.equals(h.name)){
+						return true;
+					}
+					return false;
+				}
+			}</code></pre>
+			<p><b>Object型の変数は何でも入るので呼び出し元で元の変数を入れる。</b></p>
+			<p><b>this == oのthisは命令元の左辺の比較対象の事。</b></p>
+			<p><b>o instanceof Hero・・・oはHeroクラスのインスタンスもしくは、Heroインスタンスの子クラスのインスタンスか判定</b></p>
+			<h3>新しく買いはいつしたらtoString()とequals()のオーバーライドをする必要性がないかを検討する!</h3>
+			<h2>ArrayListの使い方</h2>
+			<p><b>実務上で多用される</b></p>
+			<h3>ArrayList&lt;データ型&gt; 変数名=new ArrayList&lt;&gt;();</h3>
+			<p><b>変数名.add(データ)</b>….addでArrayListに格納していく。</p>
+			<p><b>変数名.get(数値);</b>…n番目の要素を取り出す。配列の[]の代わりにget()</p>
+			<p><b>変数名.size();</b>…Listの要素数を返す。配列の.lengthのかわり。</p>
+			<p><b>配列と同じで拡張for文が使える</b></p>
+			<h3>型は参照型しか書けない！！！</h3>
+			<p><b>intを使いたい場合は参照型のInteger,doubleの場合はDoubleを指定する</b></p>
+			<p><b>変数名.add(数値,内容)</b>…n番目に入力された内容を挿入する。</p>
+			<p><b>変数名.set(数値,内容)</b>…n番目の要素を内容に上書きする</p>
+			<p><b>ArrayListはListインタフェースを親に作られいる型。</b></p>
+			<h3>List&lt;String&gt; list3=new ArrayList&lt;&gt;();</h3>
+			<p><b>通常はList型インタフェースで宣言してArrayListでnewする。</b></p>
+			<p><b>List型がインタフェースなのでList型の要素なら何にでもキャストできるので、通常は冗長性の高いList型で左辺は宣言する。</b></p>
+			<p>List&lt;String&gt; 変数名=Arrays.asList(要素,要素,要素)で、宣言時に入れられるが、Listが固定長になって汎用性がないため通常使わない</p>
+			<h2>文字列と日付</h2>
+			<h2>タグ、関数等</h2>
+			<p><b>変数名.trim()</b>…前後のスペースの除去(半角スペースのみ)</p>
+			<p><b>String.format("")</b>…printfと同じで出力ではなく文字列を返す！！<b>使い方も同じでreturn文などでよく使う！！！</b></p>
+			<p><b>.isEmpty()</b>…空文字か（文字列の長さが0か)調べる。　戻り値はboolean</p>
+			<p><b>変数名.contains("文字列")</b>…一部にその文字列を含むか判定。</p>
+			<p><b>変数名.startsWith("文字列")</b>…指定の文字列で始まっているか調べる</p>
+			<p><b>変数名.endsWith("文字列")</b>…指定の文字列で終わるか調べる。</b></p>
+			<p><b>変数名.indexOf("文字列or文字（char型)")</b>…指定の文字列or文字が最初に登場する位置を返す。</p>
+			<p><b>変数名.charAt(数値)</b>…n番目の一文字を切り出す。</p>
+			<p><b>変数名.substring(開始位置)or(開始位置,終わり位置)</b>…開始位置から終了位置(していない場合最後)までの文字を切り出す。</p>
+			<p><b>変数名.toLowerCase()</b>…全て小文字に変換する</p>
+			<p><b>変数名.toUpperCase()</b>…全て大文字に変換する</p>
+			<p><b>変数名.replace(before,after)</b>…beforeからafterの文字列に置き換える。</p>
+			<p><b>StringBuilderクラス</b>文字列の連結を高速で行える。</p>
+			<code><pre>
+			StringBuilder sb = new StringBuilder();
+			for(int i=0; i&lt; 1000;i++){
+				sb.append("java");
+			}
+			System.out.println(sb);
+			String s = sb.toString();
+			<p><b>immutable(不変)</b>…よく使うよ</p>
+			<p><b>mutable(可変)</b>
+			<p><b>Stringクラスはimmutable</b></p>
+			<p>Stringクラスは<b>文字列連結すると、古いインスタンスが捨てられ、毎回newして新しいインスタンスとして生成しているので重い。</b></p>
+			<p><b>append</b>…付加する、添える。</p>
+			<p><b>char[] 変数名=変数名.toCharArray();</b>…文字列をchar型に変換してArrayに格納。</p>
+			<h2>特記</h2>
+		</div><!--end container-->
+	</body>
+</html>
