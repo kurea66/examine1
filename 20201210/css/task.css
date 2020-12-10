@@ -1,0 +1,32 @@
+.container{
+	position:relative;
+	margin:0 auto;
+	height:500px;
+	width:960px;
+	background-color:#eee;
+}
+.container h1{
+	position:absolute;
+	top:100px;
+	left:180px;
+	box-sizing:border-box;
+	width:600px;
+	height:300px;
+	text-align:center;
+	background-color:yellow;
+	line-height:300px;
+	font-size:60px;
+	margin:0;
+}
+.container p{
+	position:absolute;
+	top:50px;
+	left:130px;
+	width:100px;
+	height:100px;
+	border-radius:50%;
+	text-align:center;
+	background-color:red;
+	color:white;
+	line-height:100px;
+}
