@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+	</head>
+	<body>
+		<div class="container">
+			<h1>12月11日</h1>
+			<h2>Mapの使い方</h2>
+			<p><b>マップとは２つの情報をキー(key)と値(value)のペアとして格納するデータ構造</b></p>
+			<p><code><pre>
+			Map&lt;キーの型、値の型&gt; マップ変数 = new HashMap&lt;&gt;();
+			</pre></code></p>
+			<p><b>Map変数名.put(キー,値);</b>…キー値と値をセットで格納。</p>
+			<p><b>Map変数名.get(キーの値);</b>…キー値に対応する値を取得</p>
+			<p><b>Map変数名.containsKey(値)</b>…値がKeyに含まれているか判定</p>
+			<p><b>Map変数名.containsValue(値)</b>…値がValueに含まれているか判定</p>
+			<p><b>Mapの情報を取り出すにはkeyを全て取り出し、keyから対応の値を呼び出すしかない</b></p>
+			<p><b>Map変数名.keySet()</b>…格納されているkeyの値一覧を取得。通常<b>拡張for文でこの値を取得しそれに応じて対応した値の一覧を取得する。</b></p>
+			<p><code><pre>
+			for(キーの型 key:マップ変数.keySer()){
+			値の型　value=マップ変数名.get(key);
+			}</pre></code></p>
+			<h2>エラーの種類と対策</h2>
+			<p><b>文法エラー(syntax error)</b>…コンパイルが通らない</p>
+			<p><b>実行時エラー(runtime error)</b>…実行時にエラーが出る</p>
+			<p><b>論理エラー(logic error)</b>…実行結果が想定と違う</p>
+			<p><b>例外的状況(exceptional situation)</b></p>
+			<p><b>try{}catch{}文</b>…tryブロックでエラーが発生した場合落ちずにcatch文に移動する</p>
+			<p><b>Exception系の例外が発生しそうな命令を呼び出す場合、try-catch文を用いて「例外が発生した時の代替処理」を用意しておかないとコンパイルエラー</b></p>
+			<p><b>catch(IOException e){System.out.println(e.getMessage())}</b>…エラーの内容を変数eに格納する。</p>
+			<p><b>e.printStackTrace()</b>…そのエラーが<b>どの行で発生したから表示される</b></p>
+			<p><b>try{}catch{}finally{}</b>…finallyブロックは必ず実行される。エラーでプログラム停止した際にファイルが開いたままになっているのを閉じる場合、ネットワークとの接続を切る、DBに接続を切る。　これらをやらないと開きっぱなしになってほかのほかのプログラムからアクセスできなくなる。</p>
+			<h2>ファイル読み込み</h2>
+			<p><b>FileInputStream 変数名=new FileInputStream("ファイル名");</b>・・・fis</p>
+			<p><b>InputStreamReader 変数名=new InputStreamReader(変数名,"文字コード");</b>…ist</p>
+			<p><b>BufferedReader 変数名=new BufferedReader(変数);</b>…</p>
+			<p><b>while((line=変数名.readLine())!=null){}</b>…次の行がnullでなければ続ける</p>
+		</div>
+	</body>
+
+</html>
