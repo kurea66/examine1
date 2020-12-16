@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="Stylesheet" href="css/main.css">
+		<title>12月16日講義</title>
+	</head>
+	<body>
+		<div>
+			<h1>12月16日講義内容</h1>
+			<h2>データベース</h2>
+			<h3>環境構築</h3>
+			<p><b>VPS</b>…環境構築していく。</p>
+			<p><b>まずApacheをインストール</b></p>
+			<p><b>javaやphp,mySQL等をインストールしていく</b></p>
+			<h3>SQL文</h3>
+			<p><b>mySQL</b></p>
+			<p><b>database作成</b></p>
+			<p><b>CREATE DATABASE データベース名</b>…その名前のデータベース作成。</p>
+			<p><b>DEFAULT CHARACTER SET utf8;</b>…文字コード設定</p>
+			<p><b>DROP DATABASE IF EXISTS データベース名;</b>データベースの削除</p>
+			<p><b>CREATE TABLE テーブル名();</b>…テーブルの作成。()内に詳細など</p>
+			<p><b>PRIMARY KEY</b>…主キー　一意のキー。重複不可</p>
+			<p><b>AUTO_INCREMENT</b>…自動連番。</p>
+			<p><b>CHAR 数値</b>…固定長文字列</p>
+			<p><b>VARCHER(len)</b>…len桁の可変長文字列</p>
+			<p><b>TEXT</b>…長い文字列</p>
+			<p><b>DEFAULT '文言'</b>…入力がないときに表示するもの</p>
+			<h3>４つの基本機能CRUD</h3>
+			<p><b>CREATE:INSERT</b></p>
+			<p><b>READ:SLECT</b></p>
+			<p><b>UPDATE=UPDATE</b></p>
+			<p><b>DELETE=DELETE</b></p>
+			<h3>INSERT(CREATE)</h3>
+			<p><b>INSERT INTO テーブル名(カラムの並び) VALUES(値の並び)</b></p>
+			<p><b>全カラムに対しての挿入はカラムの並びを省略可</b></p>
+			<p><b>テーブルの一つ一つのデータの事をレコードという</b></p>
+			<p><b>連続入力化</b>…複数のレコードをカンマ区切りで連続して入力できる</p>
+			<h3>SELECT(READ)</h3>
+			<p><b>SELECT * FROM テーブル名</b>…全権抽出</p>
+			<p><b>SELECT カラム名(カンマ区切り) FROM テーブル名;</b>…テーブルのカラム名のカラム内容を取得する</p>
+			<p><b>SELECT * FROM テーブル名 WHERE 条件式;</b>…テーブル内の条件式に合致するものを抽出</p>
+			<p><b>SELECT * FROM テーブル名 WHERE age&lt;&gt;25;</b>…25でない(ノットイコール</p>
+			<p><b>age&gt;25 AND age&lt;40</b>…ANDはかつの演算子</p>
+			<p><b>DATE型のカラム名　&lt;='2015-02-15'</b>…日付以前</p>
+			<p><b>SELECT * FROM テーブル名 WHERE カラム名 BETWEEN A AND B</b>…AとBの間のもの(A,Bの値含む)</p>
+			<p><b>SELECT * FROM テーブル名 WHERE カラム名 IN('A','B',,,,);</b>…IN(AB)の中に含まれるデータを抽出。</p>
+			<p><b>SELECT * FROM テーブル名 WHERE カラム名 IS NULL;</b>…NULLかどうかの判定。　NULLは=では調べられない</p>
+			<p><b>IS NOT NULL</b>…NULLでないか調べる</p>
+			<p><b>SELECT * FROM members WHERE name LIKE 'abc%';</b>…LIKEは次の文字列を含む。　%はワイルドカード。　abc% abcから始まる %a% aを含む %田 は田で終わる。</p>
+			<p><b>NOT LIKE</b>…含まない。</p>
+			<p><b>ORDER BY(並び替え)</b></p>
+			<p><b>ASC(デフォルト) DESC(降順)</b></p>
+			<p><b>SELECT * FROM テーブル名 ORDER BY カラム名 DESC;</b>…テーブル内をカラムを元に降順ソート</p>
+			<p><b>ORDER BY のWHERE句との組み合わせは先にWHERE句を実行する</b></p>
+			<code><pre>
+			SELECT * FROM テーブル名 WHERE カラム名1 IS NOT NULL ORDER BY カラム名2 ASC;</code></pre>
+			<p><b>この場合カラム名1のIS NOT NULL(nullじゃない項目)をまず抽出。その中でカラム名2で昇順ソートする。</b></p>
+			<p><b>件数制限はLIMIT 数値 を使う</b></p>
+			<code><pre>SELECT * FROM members ORDER BY age DESC LIMIT 3;</pre></code>
+			<p>これで降順した上位3件を抽出</p>
+			<p><b>OFFSET 数値　指定</b></p>
+			<code><pre>SELECT * FROM テーブル名ORDER BY カラム名 DESC LIMIT 3 OFFSET 1;
+			</pre></code>
+			<p><b>ORDER BY DESCでまず降順ソートし、OFFSET1で1番目のデータを除外して２番目のデータからLIMIT3で3件のデータを抽出する。</b></p>
+			<h3>UPDATE</h3>
+			<p><b>UPDATE テーブル名 SET カラム=値</b>…でUPDATE</p>
+			<code><pre>UPDATE members SET depart='人事部'
+			WHERE name='鈴木さくら';
+			</pre></code>
+			<p><b>WHERE句がないとテーブル内のカラムの値を全て置き換えてしまう！！</b></p>
+			<h2>単語、関数等</h2>
+			<p><b>Apache</b>…インターネット通信ができるようにする。http</p>
+			<h2>特記</h2>
+		</div>
+	</body>
+</html>
