@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="Stylesheet" href="css/main.css"/>
+		<title>12月17日講義</title>
+	</head>
+	<body>
+		<div>
+			<h1>SQL</h1>
+			<h2>mySQL</h2>
+			<p>カラム作成の際<b>カラム名 VARCHAR(255) NOT NULL,</b>nullが入れられなくなる</p>
+			<p><b>SELECT カラム名 AS 表示したいタイトル,カラム名 AS 表示したいカラム名 FROM テーブル名;</b>…テーブル内の指定したカラムをASの後ろのカラム名で表示するようにできる。title等を日本語で表示可能</p>
+			<p><b>SELECT DISTINCT カラム名 FROM テーブル名</b>…カラム内のものを重複表示しない一覧で表示できる。同じカラム名は１つになる。</p>
+			<h3>CASE カラム名 WHEN THEN END</h3>
+			<p><b>switch文的な分岐</b></p>
+			<p><b>CASE カラム名 WHEN '比較対象1' THEN '内容'
+				<br>WHEN '比較対象2' THEN '内容'
+				<br>ELSE '内容'
+				<br>END AS カラムの表示名(入れないとCASE文の内容そのまま全部表示される。)
+				<br>FROM テーブル名</b></p>
+			<code><pre>
+			SELECT title AS 書名,category AS 分類,
+			CASE category WHEN '雑誌' THEN '1F'
+			WHEN 'コミック' THEN '1F'
+			ELSE '2F'
+			END AS 階
+			FROM books;
+				</pre></code>
+			<h3>CASE WHEN THEN END</h3>
+			<p><b>if文的な分岐の場合はCASEの後にカラム名を書かない</b></p>
+			
+			<h2>テーブルの結合</h2>
+			<p><b>JOIN ON</b></p>
+			<p><b>結合元と結合先で一致しているものがないものは表示されない。</b></p>
+			<p><b>LEFT JOIN</b></p>
+			<p><b>左側(最初に指定したほうの値)を基準とし、基準テーブルにしか存在しないデータ(JOIN先と合致しないデータ)もすべて出力</b></p>
+			<p><b>RIGHT JOIN</b></p>
+			<h2>単語関数等</h2>
+			<p><b>NOT NULL</b>…null制約　null不可</p>
+		</div>
+	</body>
+</html>

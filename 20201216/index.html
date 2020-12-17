@@ -69,6 +69,37 @@
 			WHERE name='鈴木さくら';
 			</pre></code>
 			<p><b>WHERE句がないとテーブル内のカラムの値を全て置き換えてしまう！！</b></p>
+			<h3>DELETE</h3>
+			<p><b>DELETE FROM テーブル名 WHERE カラム=値;</b></p>
+			<code><pre>
+			DELETE FROM カラム名 WHERE id=3;
+				</pre></code>
+			<p><b>WHEREがないと全部消えるよ！！！！！！！！！！！！！</b></p>
+			<h3>集計関数(基本結果は1レコード)</h3>
+			<p><b>count(*) or count(カラム名)</b>…*は全権カウント、カラム名指定はカラムに値が入っているものをカウント。</p>
+			<code><pre>
+			SELECT count(*) FROM テーブル名;
+			</pre></code>
+			<p><b>SELECT avg(カラム名) FROM テーブル名;</b>…カラムのデータの平均値を出す。</p>
+			<p><b>SELECT max(カラム名) FROM テーブル名;</b>…指定されたカラム内の最大値を返す。</p>
+			<p><b>SELECT min(カラム名) FROM テーブル名;</b>…指定されたカラム内の最小値を返す</p>
+			<p><b>SELECT sum(カラム名) FROM テーブル名;</b>…指定されたカラムの合計値を返す。</p>
+			<h4>GROUP BY</h4>
+			<p><b>同一項目をまとめる。主に集計関数とともに使う。結果はグループの数</b></p>
+			<p><b>SELECT カラム名,平均や合計など FROM テーブル名 GROUP BY まとめるカラム名</b>…平均や合計をGROUP BYのカラムごとでまとめる。</p>
+			<code><pre>
+			SELECT depart,avg(age) FROM members GROUP BY depart;
+				</pre></code>
+			<h4>HAVING</h4>
+			<p><b>GROUP BYした結果に対するさらに絞り込み</b></p>
+			<p><b>SELECT カラム名,平均合計など FROM テーブル名 GROUP BY カラム名 HAVING 平均合計など 条件式</b>…GROUP BY した後に使うWHEREみたいな感じ</p>
+			<code>
+				<pre>
+				SELECT depart,avg(age) FROM members 
+				GROUP BY depart 
+				HAVING avg(age) &gt;=30;
+				</pre>
+			</code>
 			<h2>単語、関数等</h2>
 			<p><b>Apache</b>…インターネット通信ができるようにする。http</p>
 			<h2>特記</h2>
